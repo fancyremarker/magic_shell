@@ -5,8 +5,8 @@ describe 'magic_shell_environment::add' do
 
   it 'adds a new magic_shell_environment' do
     chef_run.converge('magic_shell_environment::add')
-    expect(chef_run).to add_magic_shell_environment('RAILS_ENV')
-      .with(value: 'production')
+    expect(chef_run).to add_magic_shell_environment('RAILS_ENV').
+      with(:value => 'production')
   end
 
   it 'removes the magic_shell_environment' do
